@@ -4,7 +4,7 @@ const url = require('url');
 
 http.createServer((req, res) => {
     let q = url.parse(req.url, true).query;
-    // 🚨 Vulnerability: Directly using user input without sanitization
+    // Vulnerability: Directly using user input without sanitization
     res.write(`Hello ${q.name}`);
     res.end();
 }).listen(8080);
